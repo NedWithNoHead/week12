@@ -57,6 +57,16 @@ function changeBGgreen (event)
     event.target.classList.add('green')
 }
 
+const buttonContainer = document.querySelector('.buttonContainer')
+buttonContainer.addEventListener('click', changeBGgreen)
+
+buttonContainer.addEventListener('click', changeBGtextconent)
+
+function changeBGtextconent(event)
+{
+    event.target.style.color = event.target.textContent;
+}
+
 // const ohno = function ()
 // {
 //     alert('ohnononon');
