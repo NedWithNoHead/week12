@@ -1,7 +1,8 @@
 const clickMeButton = document.querySelector('.click-me')
 
-const handleClickme = function ()
+const handleClickme = function (event)
 {
+    console.log(event.target)
     alert('China is gone');
     // clickMeButton.removeEventListener('click', handleClickme);
 }
@@ -22,14 +23,39 @@ clickMeButton.addEventListener('click', changeBG)
 function changeText()
 {
     if (clickMeButton.textContent === "Launch ICMB"){
-    clickMeButton.textContent = "Reloading"
+    clickMeButton.textContent = "Reload"
 }
-    else if (clickMeButton.textContent ==="Reloading"){
+    else if (clickMeButton.textContent ==="Reload"){
         clickMeButton.textContent = "Launch ICMB"
     }
 }
 
 clickMeButton.addEventListener("click", changeText)
+
+function createAddButton()
+{
+    const PurpleButton = document.createElement("button");
+    PurpleButton.textContent = "Purple";
+    document.body.appendChild(PurpleButton);
+    PurpleButton.addEventListener('mouseover', changeBGgreen);
+}
+clickMeButton.addEventListener('click', createAddButton)
+
+function addPara ()
+{
+    const para1 = document.createElement('p');
+    para1.textContent = "Hallo";
+    document.body.appendChild(para1);
+    para1.addEventListener('mouseover', changeBGgreen);
+}
+
+clickMeButton.addEventListener('click', addPara)
+
+function changeBGgreen (event)
+{
+    console.log(event.target)
+    event.target.classList.add('green')
+}
 
 // const ohno = function ()
 // {
