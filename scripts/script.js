@@ -2,10 +2,11 @@ const clickMeButton = document.querySelector('.click-me')
 
 const handleClickme = function ()
 {
-    alert('We are all going to die anyway');
+    alert('What a rebel! Good for you!');
+    // clickMeButton.removeEventListener('click', handleClickme);
 }
 
-clickMeButton.addEventListener('click', handleClickme)
+clickMeButton.addEventListener('click', handleClickme, {once:true})
 
 
 // const ohno = function ()
